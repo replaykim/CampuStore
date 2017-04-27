@@ -3,6 +3,7 @@ package com.somethinglikethat.common.dao;
 
 import com.somethinglikethat.common.model.APK;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -21,7 +22,7 @@ public class ApkDao {
 
 
 
-    public APK getApk(int apk_no) {
+    public APK findOne(int apk_no) {
         String SQL = "Select * from APK_INFO_TB Where APK_NO = ?";
         Object[] param  = new Object[]{apk_no};
 
@@ -41,7 +42,7 @@ public class ApkDao {
         return apk;
     }
 
-    public List<APK> getApkList() {
+    public List<APK> findAll() {
         String SQL = "Select * from APK_INFO_TB";
         List<APK> apks = new ArrayList<APK>();
 
