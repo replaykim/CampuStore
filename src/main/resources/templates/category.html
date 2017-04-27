@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="/css/categoryy.css"/>
+    <title>CampusTore</title>
+</head>
+<body>
+<div class="container">
+    <div class="smallhaeder center_align">
+        <div class="inputWrapper">
+            <input type="text" class="input_text"/>
+            <button type="submit" class="searchBtn">검색</button>
+        </div>
+        <div class="sortWrapper">
+            <ul class="listMenuWrap">
+                <li class="listMenu">등록순</li>
+                <li class="listMenu">추천순</li>
+                <li class="listMenu">조회순</li>
+                <li class="listMenu">펀딩순</li>
+            </ul>
+        </div>
+        <a href="###" class="to_write">글쓰기</a>
+    </div>
+    <div class="ContentContainer center_align">
+        <div data-th-each="apk : ${apklist}" class="content">
+            <a th:href="@{/content(APK_NO=${apk.APK_NO})}">
+                <div data-th-text="${apk.APK_NAME}"></div>
+                <div data-th-text="${apk.VIEW_CNT}"></div>
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
