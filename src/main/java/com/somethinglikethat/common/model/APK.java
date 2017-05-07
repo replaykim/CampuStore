@@ -1,11 +1,17 @@
 package com.somethinglikethat.common.model;
 
+import javax.persistence.*;
 import java.util.Date;
 
 /**
  * Created by blue on 2017-04-12.
  */
+
+@Entity
+@Table(name = "APK_INFO_TB")
 public class APK {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     Integer APK_NO;
     String APK_NAME;
     String id;
@@ -17,7 +23,7 @@ public class APK {
     String DOWN_CNT;
     String VIEW_CNT;
     String RECM_CNT;
-    String INV_AMT;
+    String FUND_AMT;
     Date REG_DT;
     Date UPDT_DT;
     String APK_INFO;
@@ -112,12 +118,12 @@ public class APK {
         this.RECM_CNT = RECM_CNT;
     }
 
-    public String getINV_AMT() {
-        return INV_AMT;
+    public String getFUND_AMT() {
+        return FUND_AMT;
     }
 
-    public void setINV_AMT(String INV_AMT) {
-        this.INV_AMT = INV_AMT;
+    public void setFUND_AMT(String FUND_AMT) {
+        this.FUND_AMT = FUND_AMT;
     }
 
     public Date getREG_DT() {

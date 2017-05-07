@@ -20,19 +20,15 @@ public class ApkService {
         return apkDao.findAll();
     }
 
-    public void create(APK user) {
-
-    }
-
     public APK get(Integer id) {
         return apkDao.findOne(id);
     }
 
     public void save(APK user) {
-
+        apkDao.save(user);
     }
 
     public void remove(Integer id) {
-
+        apkDao.delete(id);
     }
 }
